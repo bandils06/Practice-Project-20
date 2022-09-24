@@ -1,0 +1,59 @@
+<!-- <p>check works!</p> -->
+<style>
+    .container {
+        border: 2px solid black;
+        text-align: center;
+        background-color: antiquewhite;
+
+    }
+
+    .table {
+        border: 2px solid red;
+        text-align: center;
+        margin-left: 40%;
+        margin-top: 2%;
+    }
+
+    th {
+        border: 1px solid blue
+    }
+
+    td {
+        border: 5px solid green
+    }
+</style>
+
+
+<div class="container">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>EmployeeID</th>
+                <th>EmployeePosition</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todoList">
+                <td>{{todo.id}}</td>
+                <td>{{todo.title}}</td>
+                <td>
+
+                    <button type="button" class="btn btn-link" (click)="editTodo()">Edit</button>
+                    <button type="button" class="btn btn-link" (click)="deleteTodo(todo.id)">Delete</button>
+                    <button type="button" class="btn btn-link" (click)="enable(todo)">Save</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="hidden()">Create</button>
+</div>
+
+
+
+
+
+<input type="text" [(ngModel)]="Title" [style.visibility]="x">
+<button type="button" class="btn btn-success" (click)="createTodo()" [style.visibility]="y">Add</button>
